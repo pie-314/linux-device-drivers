@@ -1,20 +1,17 @@
+#include "linux/printk.h"
 #include <linux/init.h>
 #include <linux/module.h>
-#include <linux/kernel.h>
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("User");
-MODULE_DESCRIPTION("A simple hello world kernel module");
-MODULE_VERSION("0.1");
+MODULE_AUTHOR("Pi");
+MODULE_DESCRIPTION("Simple hello world");
 
-static int __init hello_init(void) {
-    printk(KERN_INFO "Hello, world!\n");
-    return 0;
+static int init_pi(void) {
+  printk("Hey i am pi");
+  return 0;
 }
 
-static void __exit hello_exit(void) {
-    printk(KERN_INFO "Goodbye, world!\n");
-}
+static void exit_pi(void) { printk("bye"); }
 
-module_init(hello_init);
-module_exit(hello_exit);
+module_init(init_pi);
+module_exit(exit_pi);
