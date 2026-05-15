@@ -1,0 +1,12 @@
+# Vagrant metadata
+.vagrant/
+
+# Kernel build artifacts
+*.o
+*.ko
+*.mod.c
+*.mod
+*.symvers
+*.order
+.*.cmd
+.tmp_versions/
